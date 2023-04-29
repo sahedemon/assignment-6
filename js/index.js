@@ -20,7 +20,7 @@ const loedData = (isSlice)=>{
         }
        
     users.forEach(user => {
-        console.log(user);
+       console.log(user);
         const userDiv = document.createElement('div');
         userDiv.classList.add('col');
    
@@ -37,14 +37,13 @@ const loedData = (isSlice)=>{
         <h5 class="px-2">${user.name} </h5>
      <div class="d-flex justify-content-between">   
         <div>
-       <p> <i class="fas fa-calendar-alt"></i>${user. published_in}</p>
+       <p> <i class="fas fa-calendar-alt"></i>${user.published_in}</p>
         </div>
         <div>
-        <button><i class="fas fa-arrow-right "></i></button> 
-        </div>
+        <button type="button" onclick="loadSingleData('${user.id}')"  data-bs-toggle="modal" data-bs-target="#usersDetails"><i class="fas fa-arrow-right "></i></button> 
+        </div>  
       </div>  
         </div>
-
         </div>
       </div>
     </div>
@@ -56,8 +55,36 @@ const loedData = (isSlice)=>{
 //showall button click to show all data
  document.getElementById('btn-ShowAll').addEventListener('click',function(){
     loedData(false);
- })
-  
+ });
+ 
+//  const loadSingleData =async (singleId) =>{
+//     const url = ('https://openapi.programming-hero.com/api/ai/tool/01')
+//     const res =await fetch(url);
+//     const data = await res.json();
+//     data(data.data);
+   
+//  };
+
+ const loadSingleData = (id)=>{
+    console.log(id)
+    const url = (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+    console.log(url)
+    fetch(url)
+    .then(res => res.json())
+    .then(data => display(data.data))
+ }
+ const display = user=>{
+       console.log(user)
+      
+ }
 
 
+
+
+
+
+
+
+
+ //loadSingleData();
  loedData(true);
