@@ -77,7 +77,7 @@ const loedData = (isSlice)=>{
        console.log(user,'hello')
        const  userSingleData = document.getElementById('userSingleData');
        userSingleData.innerHTML=`
-        <img src="${user.image_link[0]}" class="card-img-top px-3 rounded-5 py-3" alt="...">
+        <img src="${user.image_link[0]}" class="card-img-top p-3 rounded-5 " alt="...">
        <h5>${user.input_output_examples[0].input ? user.input_output_examples[0].input: 'can you giveme any exsample'}</h5>
        <p>${user.input_output_examples[0].output ? user.input_output_examples[0].output: 'No! Not Yet! Take a break!!!'}</p>
        
@@ -85,9 +85,31 @@ const loedData = (isSlice)=>{
     const userDescription = document.getElementById('userDescription');
     userDescription.innerHTML = `
     <h5>${user.description}</h5>
-    <div>
-    
+    <div class="d-flex gap-2  align-items-center justify-content-between">
+    <div class="border rounded-5 p-2">
+    <h5>${user.pricing[0].price}</h5>
+    <h5>${user.pricing[0].plan}</h5>
     </div>
+    <div class=" border rounded-5 p-2">
+    <h5>${user.pricing[1].price}</h5>
+    <h5>${user.pricing[1].plan}</h5>
+    </div>
+    <div class=" border rounded-5 p-2">
+    <h6>${user.pricing[2].price}</h6>
+    <h6>${user.pricing[2].plan}</h6>
+    </div>
+   </div>
+   <div class="d-flex  justify-content-between">
+   <div> <h4 class="py-3">integrations</h4>
+   <ol class="">
+   ${user.features.map(feature => `<ul>${feature.feature_name}</ul>`).join('')}
+   </ol>
+   </div>
+   <div> <h4 class="py-3">features</h4></div>
+   <ol class="">
+   ${user.features.map(feature => `<ul>${feature.feature_name}</ul>`).join('')}
+   </ol>
+   </div>
     `
 
  };
