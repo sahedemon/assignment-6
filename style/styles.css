@@ -1,3 +1,40 @@
-/* #userDescription{
-    background-color: EB5757;
-} */
+
+
+#userDescription{
+    background-color: #EB5757;
+}
+
+button{
+   background-color: #FEF7F7;
+    color: #EB5757;
+    border-radius: 18px;
+    border: none;
+
+}
+
+button:hover {
+   
+    color: #EB5757;
+
+  };
+ 
+#btn-ShowAll,#btn-date{
+    background-color: #eb5757b0;
+}
+#btn-ShowAll:hover{
+    
+    background-color: #EB5757;
+}
+#btn-date:hover{
+    background-color: #EB5757;
+}
+
+#price0{
+    color: #03A30A;
+}
+#price1{
+    color: #F28927;
+}
+#price2{
+   color: #EB5757;
+}
