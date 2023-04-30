@@ -1,11 +1,13 @@
+
 const loedData = (isSlice)=>{
+   
     const url = (' https://openapi.programming-hero.com/api/ai/tools');
     fetch(url)
     .then(response => response.json())
-    .then(data =>displayUserData(data.data.tools,isSlice))
+    .then(data => displayUserData(data.data.tools,isSlice,))
 
  };
-
+ 
  const displayUserData = (users,isSlice)=>{
         const userDataContainer = document.getElementById('user-container');
         userDataContainer.textContent = '';
@@ -18,13 +20,11 @@ const loedData = (isSlice)=>{
         else{
             showAll.classList.add('d-none');
         }
-       
+
     users.forEach(user => {
        console.log(user);
         const userDiv = document.createElement('div');
         userDiv.classList.add('col');
-   
-   
         userDiv.innerHTML =`
         <div class="card h-100">
         <img src="${user.image}" class="card-img-top px-3 rounded-5 py-3" alt="...">
@@ -57,33 +57,39 @@ const loedData = (isSlice)=>{
     loedData(false);
  });
  
-//  const loadSingleData =async (singleId) =>{
-//     const url = ('https://openapi.programming-hero.com/api/ai/tool/01')
-//     const res =await fetch(url);
-//     const data = await res.json();
-//     data(data.data);
+ const loadSingleData =async (id) =>{
+    const url = (`https://openapi.programming-hero.com/api/ai/tool/${id}`)
+    const res =await fetch(url);
+    const data = await res.json();
+    display(data.data);
    
-//  };
-
- const loadSingleData = (id)=>{
-    console.log(id)
-    const url = (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
-    //console.log(url)
-    fetch(url)
-    .then(res => res.json())
-    .then(data => display(data.data))
  };
+
+//  const loadSingleData = (id)=>{
+//     // console.log(id)
+//     const url = (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
+//     //console.log(url)
+//     fetch(url)
+//     .then(res => res.json())
+//     .then(data => display(data.data))
+//  };
  const display = user=>{
-       console.log(user)
+       console.log(user,'hello')
        const  userSingleData = document.getElementById('userSingleData');
        userSingleData.innerHTML=`
-       <img src="${user.logo ? user.logo:'no image found'}" class="card-img-top px-3 rounded-5 py-3" alt="...">
-       <p> tools name:${user.input_output_examples[0].input ? user.input_output_examples[0].input: 'can you giveme any exsample'}</p>
-       <p> tools name:${user.input_output_examples[0].output ? user.input_output_examples[0].output: 'No! Not Yet! Take a break!!!'}</p>
+        <img src="${user.image_link[0]}" class="card-img-top px-3 rounded-5 py-3" alt="...">
+       <h5>${user.input_output_examples[0].input ? user.input_output_examples[0].input: 'can you giveme any exsample'}</h5>
+       <p>${user.input_output_examples[0].output ? user.input_output_examples[0].output: 'No! Not Yet! Take a break!!!'}</p>
        
        `
-
+    const userDescription = document.getElementById('userDescription');
+    userDescription.innerHTML = `
+    <h5>${user.description}</h5>
+    <div>
     
+    </div>
+    `
+
  };
 
 

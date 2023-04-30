@@ -1,64 +1,79 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI Universe Hub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/styles.css">
-  </head>
-  <body>
-    <header>
-        <h1 class="text-center p-3">AI Universe Hub</h1>
-        <div class="text-center p-3">
-            <button id="btn-date" class="btn btn-primary ">Sort By Date</button>
-        </div>
-    </header>
-  
 
-    <main>
-        <!-- user-data-container -->
-        <section>
-        <div class="row row-cols-1 row-cols-md-3 g-4 p-3  " id="user-container">
-        
-        </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Universe Hub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
+    integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1 class="text-center p-3">AI Universe Hub</h1>
+    <div class="text-center p-3">
+      <button id="btn-date" class="btn btn-primary ">Sort By Date</button>
+    </div>
+  </header>
+
+
+  <main>
+    <!-- user-data-container -->
+    <section>
+      <div class="row row-cols-1 row-cols-md-3 g-4 p-3  " id="user-container">
+
+      </div>
     </section>
-       <section>
-    
+    <section>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="usersDetails" tabindex="-1" aria-labelledby="usersDetailsLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div id="userSingleData" class="modal-body">
-            <!-- <img src="" id="userSingleData"  alt=""> -->
 
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+
+      <!-- Modal -->
+
+      <div class="modal fade" id="usersDetails" tabindex="-1"
+        aria-labelledby="usersDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="d-flex gap-3 p-3  align-items-center justify-content-center">
+
+                <div id="userDescription" class="modal-body  bg-danger-subtle border border-danger">
+                </div>
+                <div id="userSingleData" class="modal-body  border ">
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  
-       </section>
-       
-       
-       <!-- see more section -->
-       <section>
-    </div>
-    <div id="Show-all" class="d-none text-center">
-        <div id="btn-ShowAll" class="btn btn-primary px-3">See More</div>
-    </div>
-</section>    
-</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
-  </body>
+
+    </section>
+
+
+    <!-- see more section -->
+    <section>
+      </div>
+      <div id="Show-all" class="d-none text-center">
+        <div id="btn-ShowAll" class="btn btn-primary px-3">See More</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+</body>
+
 </html>
