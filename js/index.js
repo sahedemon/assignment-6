@@ -99,16 +99,18 @@ const loedData = (isSlice)=>{
     <h6>${user.pricing[2].plan}</h6>
     </div>
    </div>
+   
    <div class="d-flex  justify-content-between">
-   <div> <h4 class="py-3">integrations</h4>
-   <ol class="">
-   ${user.features.map(feature => `<ul>${feature.feature_name}</ul>`).join('')}
-   </ol>
+   <div> 
+   <h4 class="py-3">features</h4>
+   <li>${user.features['1'].feature_name}</li>
+   <li>${user.features['2'].feature_name}</li>
+   <li>${user.features['3'].feature_name}</li>
    </div>
-   <div> <h4 class="py-3">features</h4></div>
-   <ol class="">
-   ${user.features.map(feature => `<ul>${feature.feature_name}</ul>`).join('')}
-   </ol>
+   <div> <h4 class="py-3">integrations</h4>
+   ${user.integrations.map(integration =>`<li>${integration}</li>`).join('')}
+   </div>
+   
    </div>
     `
 
