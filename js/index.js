@@ -107,7 +107,9 @@ const loedData = (isSlice)=>{
    <li>${user.features['2'].feature_name}</li>
    <li>${user.features['3'].feature_name}</li>
    </div>
-   
+   <div> <h4 class="py-3">integrations</h4>
+   ${user.integrations.map(integration =>`<li>${integration}</li>`).join('')}
+   </div>
    
    </div>
     `
