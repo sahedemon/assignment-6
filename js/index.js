@@ -68,15 +68,23 @@ const loedData = (isSlice)=>{
  const loadSingleData = (id)=>{
     console.log(id)
     const url = (`https://openapi.programming-hero.com/api/ai/tool/${id}`);
-    console.log(url)
+    //console.log(url)
     fetch(url)
     .then(res => res.json())
     .then(data => display(data.data))
- }
+ };
  const display = user=>{
        console.log(user)
-      
- }
+       const  userSingleData = document.getElementById('userSingleData');
+       userSingleData.innerHTML=`
+       <img src="${user.logo ? user.logo:'no image found'}" class="card-img-top px-3 rounded-5 py-3" alt="...">
+       <p> tools name:${user.input_output_examples[0].input ? user.input_output_examples[0].input: 'can you giveme any exsample'}</p>
+       <p> tools name:${user.input_output_examples[0].output ? user.input_output_examples[0].output: 'No! Not Yet! Take a break!!!'}</p>
+       
+       `
+
+    
+ };
 
 
 
